@@ -156,9 +156,9 @@ void serialInputFlush() {
 
 void getFanSpeed() {
   char sfanspeed[4];
-  memcpy(sfanspeed, str_input + 4, 4); // Sprawdź częstotliwość
+  memcpy(sfanspeed, str_input + 4, 4);
   FAN_PWM_current_speed = (int) atoi(sfanspeed);
   clearBuffer();
-  sprintf(buffer, "%4s%3d\n", FAN_SPEED, FAN_PWM_current_speed); // Wpisanie do bufora danych
+  sprintf(buffer, "%4s%3d\n", FAN_SPEED, FAN_PWM_current_speed); // Write to buffer
   writeBufferToSerial();
 }
